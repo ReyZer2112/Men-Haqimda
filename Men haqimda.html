@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReyZer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+  <style>
+
+<title>Mening Websaytlarim</title>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      background-color: #1a1a1a;
+      font-size: 18px;
+    }
+
+    header a {
+      color: #aaa;
+      text-decoration: none;
+      position: relative;
+    }
+
+    header a:hover {
+      color: white;
+    }
+
+    .project-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .project-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+    }
+
+    .project-text {
+      max-width: 50%;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .project-number {
+      font-size: 50px;
+      color: crimson;
+      margin: 0;
+    }
+
+    .project-label {
+      font-size: 18px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .project-title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .visit-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .visit-button:hover {
+      transform: scale(1.1);
+    }
+
+    .project-image {
+      width: 400px;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .nav-buttons button {
+      background: #222;
+      color: white;
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background: crimson;
+    }
+
+    .slide-in-right {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    .slide-in-left {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    .slide-center {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body { background: #1a1a1a; color: #fff; position: relative; overflow-x: hidden; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #111; padding: 1rem 2rem;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem; font-weight: bold; text-decoration: none;
+    }
+    .logo span:first-child { color: red; }
+    .logo span:last-child { color: white; }
+    .navbar a {
+      margin-left: 1.2rem; color: #fff; text-decoration: none;
+      font-size: 1rem; transition: 0.3s;
+    }
+    .navbar a:hover { color: red; }
+    #menu-icon { display: none; font-size: 2rem; cursor: pointer; color: white; }
+    section { padding: 4rem 2rem; }
+    .home-content h1 { font-size: 2.5rem; color: red; }
+    .home-content h3 { font-size: 1.5rem; }
+    .home-content p { margin: 1rem 0; max-width: 600px; }
+    .social-icons a {
+      margin: 0 0.5rem; color: #fff; font-size: 1.5rem;
+    }
+    .btn-group .btn {
+      display: inline-block; margin: 0.5rem; padding: 0.6rem 1.2rem;
+      background: red; color: #fff; text-decoration: none;
+      border-radius: 5px;
+    }
+    .about-content h2 span,
+    .heading span { color: red; }
+    .about-content p { max-width: 600px; }
+    .highlight { color: red; font-weight: bold; }
+
+    .about-content p strong { display: inline-block; width: 200px; }
+    .about-content p br { margin-bottom: 10px; display: block; }
+    .about-content p:nth-child(1) strong { color: #f54242; }
+    .about-content p:nth-child(2) strong { color: #42f554; }
+    .about-content p:nth-child(3) strong { color: #4287f5; }
+
+    .services-container {
+      display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
+    }
+    .service-box {
+      flex: 1 1 300px; background: #222;
+      padding: 1rem; border-radius: 8px;
+    }
+    .service-box i { font-size: 2rem; color: red; }
+    .contact form { margin-top: 2rem; }
+    .input-group { display: flex; gap: 1rem; }
+    .input-box {
+      flex: 1; display: flex; flex-direction: column; gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.8rem; border: none;
+      border-radius: 5px; width: 100%;
+    }
+    textarea { resize: vertical; }
+    footer {
+      background: #111; padding: 2rem; text-align: center;
+    }
+
+footer .list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+footer .list a {
+  color: white;
+  text-decoration: none;
+}
+
+
+  {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: siteLoad 1s ease forwards;
+}
+
+@keyframes siteLoad {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 480px) {
+  footer .list {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  footer .list a {
+    font-size: 0.99rem;
+    white-space: nowrap;
+    padding: 0 4px;
+  }
+}
+  
+
+    @media (max-width: 768px) {
+      #menu-icon { display: block; }
+      .navbar {
+        display: none; flex-direction: column;
+        background: #111; position: absolute;
+        top: 60px; right: 0; width: 200px;
+        text-align: right; padding: 1rem;
+      }
+      .navbar.active { display: flex; }
+    }
+    .rey {
+  color: red;
+  animation: swapRey 2s infinite;
+}
+.zer {
+  color: white;
+  animation: swapZer 2s infinite;
+}
+@keyframes swapRey {
+  0%, 49% { color: red; }
+  50%, 100% { color: white; }
+}
+@keyframes swapZer {
+  0%, 49% { color: white; }
+  50%, 100% { color: red; }
+}
+
+.contact .heading {
+  text-align: center;
+}
+
+.meningwebsaytlrim {
+  min-height: 0vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #; /* fon ixtiyoriy */
+  color: white;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+#meningwebsaytlrim {
+  scroll-margin-top: 120px; /* yoki header balandligiga qarab 80-120px oralig'ida */
+}
+
+.click-effect {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 17, 255); /* chuqur ko‘k */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: scale(1);
+  animation: clickAnim 0.5s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes clickAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+  
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo"><span class="rey">Rey</span><span class="zer">Zer</span></a>
+    <i class="ri-menu-line" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#home">Bosh sahifa</a>
+      <a href="#about">Men Haqimda</a>
+      <a href="#services">Servislar</a>
+      <a href="#meningwebsaytlrim">Mening Websaytlarim</a>
+      <a href="#contact">Bog'lanish</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Salom bu <span>ReyZer</span></h1>
+      <h3>Men <span id="dynamicRole">Frontend Dasturchiman</span></h3>
+      <p>Men Zohirshox Roziqov, yosh Frontend dasturchiman. HTML va CSS ni yaxshi bilaman. Maqsadim — IT sohasida yuqori darajaga chiqish.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/reyzer2112"><i class="ri-instagram-fill"></i></a>
+        <a href="https://www.youtube.com/@ReyZer-2112"><i class="ri-youtube-fill"></i></a>
+        <a href="https://t.me/ReyZer2112"><i class="ri-telegram-fill"></i></a>
+        <a href="https://www.snapchat.com/add/reyzer2112?share_id=Ha5ktm0sdkc&locale=ru-RU"><i class="ri-snapchat-fill"></i></a>
+        <a href="https://www.roblox.com/users/4669071068/profile"><i class="ri-gamepad-fill"></i></a>
+        <a href="https://discord.gg/reyzer2112"><i class="ri-discord-fill"></i></a>
+      <div class="btn-group">
+        <a href="#contact" class="btn">Bog'lanish</a>
+        <a href="mailto:r.zohirshox2112@gmail.com" class="btn">Menga yozing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2>Men <span>Haqimda</span></h2>
+      <p>
+      <strong>Ism:</strong> Zohirshox<br>
+      <strong>Familiya:</strong> Roziqov<br>
+      <strong>Yosh:</strong> 13<br>
+      <strong>Tug‘ilgan sana:</strong> 2012-yil, 2-mart<br>
+      <strong>Yashash joyi:</strong> Jizzax, O'zbekiston<br>
+      <strong>Millat:</strong> O‘zbek<br>
+      <strong>Til bilimi:</strong> O‘zbek, Rus, Ingliz, Tojik, Qozoq<br>
+      <strong>Hobbilari:</strong> Gaming, kod yozish, video montaj qilish<br>
+      <strong>Qiziqishlari:</strong> Dasturlash, mobilograf, o‘yinlar (Minecraft, Roblox)<br>
+      <strong>Sevimli film:</strong> Tin Tinning sarguzashtlari<br>
+      <strong>Sevimli taom:</strong> Shashlik<br>
+      <strong>Sevimli hayvon:</strong> Mushuk <br>
+      <strong>Yoqtirgan rangi:</strong> Qizil<br>
+      <strong>Orzu qilgan kasbi:</strong> Uchuvchi<br>
+      <strong>Kelajakdagi rejalar:</strong> O‘z o‘yinini yaratish, YouTube kanal ochish<br>
+      <strong>Yoqtirgan firmalari:</strong> Ferrari, BMW, Nike<br>
+      <strong>Yoqtirgan mashina:</strong> LaFerrari<br>
+      <strong>Yoqtirgan futbol jamoa:</strong> Real Madrid<br>
+      <strong>Yoqtirgan telefon rusumi:</strong> Redmi<br>
+      <strong>Ijtimoiy tarmoqdagi nomi:</strong> ReyZer<br>
+
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="heading"> <span class="red-text">Servislar</span></h2>
+    <div class="services-container">
+      <div class="service-box">
+        <i class="ri-code-fill"></i>
+        <h4>Frontend Developer</h4>
+        <p>HTML, CSS, JavaScript asosida saytlar yarataman.</p>
+      </div>
+      <div class="service-box">
+        <i class="ri-smartphone-line"></i>
+        <h4>Mobil Bloger</h4>
+        <p>Telefon orqali rasm va videolarni tahrirlayman.</p>
+      </div>
+      <div class="service-box">
+        <i class="ri-gamepad-fill"></i>
+        <h4>Gamer</h4>
+        <p>Minecraft va Roblox’da xaritalar yaratish bilan shug‘ullanaman.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="meningwebsaytlrim" id="meningwebsaytlrim">
+  <div class="about-content">
+    <h2 class="heading"> Mening <span>Websaytlarim</span></h2>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="project-container">
+    <div class="project-text" style="max-width: 100%; text-align: left;">
+      <p class="project-number" id="projectNumber">01</p>
+      <p class="project-label">Proyekt</p>
+      <h2 class="project-title" id="projectTitle">2048 O‘yini</h2>
+      <p class="project-description" id="projectDescription">
+        Salom hammaga! 👋Men o‘zim mustaqil tarzda 2048 o‘yini asosida websayt yaratdim. Sayt aynan kompyuter foydalanuvchilari uchun qulaylashtirilgan. 💻✨🔍 Asosiy xususiyatlar:⚡️ Tez ishlaydi va yengil interfeys⌨️ Oson boshqaruv (klaviatura bilan)🚫 Minimal reklama — maksimal o‘yin zavqi.
+      </p>
+      <a class="visit-button" id="visitLink" href="https://reyzer2112.github.io/ReyZer2112/" target="_blank">Saytga o'tish</a>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevProject()">&lt;</button>
+    <button onclick="nextProject()">&gt;</button>
+  </div>
+</section>
+
+
+<script>
+  const projects = [
+    {
+      number: "01",
+      title: "2048 O‘yini",
+      description: "Salom hammaga! 👋Men o‘zim mustaqil tarzda 2048 o‘yini asosida websayt yaratdim. Sayt aynan kompyuter foydalanuvchilari uchun qulaylashtirilgan. 💻✨🔍 Asosiy xususiyatlar:⚡️ Tez ishlaydi va yengil interfeys⌨️ Oson boshqaruv (klaviatura bilan)🚫 Minimal reklama — maksimal o‘yin zavqi.",
+    
+      link: "https://reyzer2112.github.io/ReyZer2112/"
+    },
+    {
+      number: "02",
+      title: "Wordle O‘zbekcha",
+      description: `O‘zbek tilida 5 harfli so‘zni topishga asoslangan mini web-o‘yin. Mobil va kompyuterda qulay ishlaydi! 📱💻
+
+🔑 Asosiy imkoniyatlar:
+🖐 O‘zbekcha harflar
+🎶 Tovushlar bilan interaktivlik
+🎊 Yutganingizda zarlar (konfetti) yog‘iladi
+🌙 Tungi va kunduzgi rejim
+📊 G‘alaba va yutqazish statistikasi
+📖 So‘zlar ro‘yxati tugmasi.`,
+
+    link: "https://reyzer2112.github.io/Wordle-O-zbekcha/"
+    },
+    {
+      number: "03",
+      title: "Necha vaqt qoldi?",
+      description: `📆 Sana sanash endi muammo emas!
+📱 Mobilga mos, sodda, chiroyli va qulay veb-ilova tayyor!
+
+🔔 Tug‘ilgan kunmi?
+🎓 Imtihonmi?
+✈️ Sayohatmi?
+💍 To‘y, yubiley, uchrashuv?
+⏳ Sana yaqinlashyapti, lekin qancha vaqt qolganini bilmayapsizmi?
+
+📌 ReyZer tomonidan yaratilgan bepul taymer sayti siz uchun:
+
+✔️ KUN · SOAT · DAQIQA · SONIYA bo‘yicha hisob
+✔️ Tungi / Kungi rejim
+✔️ Chiroyli animatsiyalar
+✔️ Audio ogohlantirish
+✔️ Telefon va kompyuterda ishlaydi
+✔️ Telegram, Instagram, Discord linklari bilan`,  
+    link: "https://reyzer2112.github.io/Necha-kun-qoldi-/"
+    }
+  ];
+
+  let current = 0;
+
+function updateProject(dir) {
+  const text = document.querySelector(".project-text");
+
+  text.classList.remove("slide-center");
+
+  if (dir === "right") {
+    text.classList.add("slide-in-left");
+  } else {
+    text.classList.add("slide-in-right");
+  }
+
+  setTimeout(() => {
+    if (dir === "right") {
+      current = (current + 1) % projects.length;
+    } else {
+      current = (current - 1 + projects.length) % projects.length;
+    }
+
+    const p = projects[current];
+    document.getElementById("projectNumber").textContent = p.number;
+    document.getElementById("projectTitle").textContent = p.title;
+    document.getElementById("projectDescription").textContent = p.description;
+    document.getElementById("visitLink").href = p.link;
+
+    text.className = "project-text slide-center";
+  }, 300);
+}
+
+
+  function nextProject() {
+    updateProject("right");
+  }
+
+  function prevProject() {
+    updateProject("left");
+  }
+</script>
+
+<script>
+  const roles = [
+    "Frontend Dasturchiman",
+    "Mobil Blogerman",
+    "Gamerman"
+  ];
+
+  let currentIndex = 0;
+  const roleElement = document.getElementById("dynamicRole");
+
+  function eraseText(text, callback) {
+    let i = text.length;
+    const eraseInterval = setInterval(() => {
+      roleElement.textContent = text.slice(0, --i);
+      if (i === 0) {
+        clearInterval(eraseInterval);
+        callback();
+      }
+    }, 50); // har bir harfni yo‘q qilish tezligi
+  }
+
+  function typeText(text) {
+    let i = 0;
+    const typeInterval = setInterval(() => {
+      roleElement.textContent = text.slice(0, ++i);
+      if (i === text.length) {
+        clearInterval(typeInterval);
+        setTimeout(() => cycleText(), 5000); // yozib bo‘lgach 2 soniya kutadi
+      }
+    }, 70); // har bir harfni yozish tezligi
+  }
+
+  function cycleText() {
+    currentIndex = (currentIndex + 1) % roles.length;
+    eraseText(roleElement.textContent, () => {
+      typeText(roles[currentIndex]);
+    });
+  }
+
+  // Boshlanish
+  roleElement.textContent = roles[0];
+  setTimeout(() => cycleText(), 3000);
+</script>
+
+
+
+<section class="contact" id="contact">
+<h2 class="heading">Men bilan <span>Bog'laning</span></h2>
+<form action="#">
+    <div class="input-box" style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+      <input type="text" placeholder="Ismingizni kiriting" required style="background: #222; color: #fff; border: none; padding: 12px; border-radius: 8px;">
+      <input type="email" placeholder="Email manzilingiz" required style="background: #222; color: #fff; border: none; padding: 12px; border-radius: 8px;">
+      <input type="number" placeholder="Telefon raqamingiz" required style="background: #222; color: #fff; border: none; padding: 12px; border-radius: 8px;">
+      <input type="text" placeholder="Mavzu (masalan: Hamkorlik, Savol...)" required style="background: #222; color: #fff; border: none; padding: 12px; border-radius: 8px;">
+    </div>
+
+    <div class="input-box" style="margin-top: 20px; max-width: 600px; margin: 20px auto;">
+      <textarea cols="30" rows="6" placeholder="Xabaringizni yozing..." required
+        style="width: 100%; background: #222; color: #fff; border: none; padding: 12px; border-radius: 8px;"></textarea>
+      <input type="submit" value="Yuborish" class="btn" style="margin-top: 15px;">
+    </div>
+  </form>
+</section>
+
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/reyzer2112"><i class="ri-instagram-fill"></i></a>
+        <a href="https://www.youtube.com/@ReyZer-2112"><i class="ri-youtube-fill"></i></a>
+        <a href="https://t.me/ReyZer2112"><i class="ri-telegram-fill"></i></a>
+        <a href="https://www.snapchat.com/add/reyzer2112?share_id=Ha5ktm0sdkc&locale=ru-RU"><i class="ri-snapchat-fill"></i></a>
+        <a href="https://www.roblox.com/users/4669071068/profile"><i class="ri-gamepad-fill"></i></a>
+        <a href="https://discord.gg/reyzer2112"><i class="ri-discord-fill"></i></a>
+      <div class="btn-group">
+<ul class="list">
+      <li><a href="#about">Men haqimda</a></li>
+      <li><a href="#services">Servislar</a></li>
+      <li><a href="#meningwebsaytlrim">FAQ</a></li>
+      <li><a href="#contact">Bog'lanish</a></li>
+</ul>
+    <p>&copy; 2025 Zohirshox ReyZer | Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('ri-arrow-left-line');
+      navbar.classList.toggle('active');
+    };
+    gsap.from(".home-content h1, .home-content h3", {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "bounce"
+    });
+    gsap.from(".service-box", {
+      scrollTrigger: ".services",
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2
+    });
+
+// Click effect
+document.addEventListener('click', function(e) {
+  const circle = document.createElement('div');
+  circle.classList.add('click-effect');
+  circle.style.left = ${e.pageX - 10}px;
+  circle.style.top = ${e.pageY - 10}px;
+  document.body.appendChild(circle);
+  setTimeout(() => {
+    circle.remove();
+  }, 500); // 0.5 sekund
+});
+
+
+  let current = 0;
+
+    const text = document.querySelector(".project-text");
+    const image = document.getElementById("projectImage");
+
+    text.classList.remove("slide-center");
+    image.classList.remove("slide-center");
+
+    if (dir === "right") {
+      text.classList.add("slide-in-left");
+      image.classList.add("slide-in-left");
+    } else {
+      text.classList.add("slide-in-right");
+      image.classList.add("slide-in-right");
+    }
+
+    setTimeout(() => {
+      if (dir === "right") {
+        current = (current + 1) % projects.length;
+      } else {
+        current = (current - 1 + projects.length) % projects.length;
+      }
+
+      const p = projects[current];
+      document.getElementById("projectNumber").textContent = p.number;
+      document.getElementById("projectTitle").textContent = p.title;
+      document.getElementById("projectDescription").textContent = p.description;
+      document.getElementById("projectImage").style.backgroundImage = url('${p.image}');
+      document.getElementById("visitLink").href = p.link;
+
+      text.className = "project-text slide-center";
+      image.className = "project-image slide-center";
+    }, 300);
+  }
+
+  function nextProject() {
+    updateProject("right");
+  }
+
+  function prevProject() {
+    updateProject("left");
+  }
+ 
+    </script> <!-- bu ScrollTrigger/GSAP kod tugaydi -->
+
+  <script>
+    document.addEventListener('click', function(e) {
+      const circle = document.createElement('div');
+      circle.classList.add('click-effect');
+      circle.style.left = `${e.pageX - 10}px`;
+      circle.style.top = `${e.pageY - 10}px`;
+      document.body.appendChild(circle);
+
+      setTimeout(() => {
+        circle.remove();
+      }, 500); // 0.5 sekunddan so'ng yo‘qoladi
+    });
+
+  </script>
+</body>
+</html>
