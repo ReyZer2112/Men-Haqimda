@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ReyZer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
   <style>
@@ -109,6 +110,51 @@
       text-align: center;
       margin-top: 40px;
     }
+
+.service-box {
+  flex: 1 1 300px;
+  background: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3); /* Red shadow on hover */
+}
+
+.service-box:active {
+  transform: scale(1.1); /* Slightly bigger on click */
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4); /* Darker shadow when clicked */
+}
+
+.service-box i {
+  font-size: 2rem;
+  color: red;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover i {
+  transform: rotate(10deg);
+}
+
+.service-box p {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .service-box {
+    transform: scale(1); /* Kichik ekranlarda scale bo‘yicha oddiy animatsiya */
+  }
+
+  .service-box:hover {
+    transform: scale(1.02); /* Hoverda biroz kattalashadi */
+  }
+}
+
 
     .nav-buttons button {
       background: #222;
@@ -250,6 +296,7 @@ footer .list a {
 }
   
 
+
     @media (max-width: 768px) {
       #menu-icon { display: block; }
       .navbar {
@@ -358,10 +405,10 @@ footer .list a {
       <strong>Familiya:</strong> Roziqov<br>
       <strong>Yosh:</strong> 13<br>
       <strong>Tug‘ilgan sana:</strong> 2012-yil, 2-mart<br>
-      <strong>Yashash joyi:</strong> Jizzax, O'zbekiston<br>
+      <strong>Yashash joyi:</strong> O'zbekiston, Jizzax<br>
       <strong>Millat:</strong> O‘zbek<br>
       <strong>Til bilimi:</strong> O‘zbek, Rus, Ingliz, Tojik, Qozoq<br>
-      <strong>Hobbilari:</strong> Gaming, kod yozish, video montaj qilish<br>
+      <strong>Hobbilari:</strong> Gaming, kod yozish, video edit, ilova va o'yinlar yaratish<br>
       <strong>Qiziqishlari:</strong> Dasturlash, mobilograf, o‘yinlar (Minecraft, Roblox)<br>
       <strong>Sevimli film:</strong> Tin Tinning sarguzashtlari<br>
       <strong>Sevimli taom:</strong> Shashlik<br>
@@ -378,26 +425,27 @@ footer .list a {
     </div>
   </section>
 
-  <section class="services" id="services">
-    <h2 class="heading"> <span class="red-text">Servislar</span></h2>
-    <div class="services-container">
-      <div class="service-box">
-        <i class="ri-code-fill"></i>
-        <h4>Frontend Developer</h4>
-        <p>HTML, CSS, JavaScript asosida saytlar yarataman.</p>
-      </div>
-      <div class="service-box">
-        <i class="ri-smartphone-line"></i>
-        <h4>Mobil Bloger</h4>
-        <p>Telefon orqali rasm va videolarni tahrirlayman.</p>
-      </div>
-      <div class="service-box">
-        <i class="ri-gamepad-fill"></i>
-        <h4>Gamer</h4>
-        <p>Minecraft va Roblox’da xaritalar yaratish bilan shug‘ullanaman.</p>
-      </div>
+<section class="services" id="services">
+  <h2 class="heading"> <span class="red-text">Servislar</span></h2>
+  <div class="services-container">
+    <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="clickEffect(this)">
+      <i class="ri-code-fill"></i>
+      <h4>Frontend Developer</h4>
+      <p>HTML, CSS, JavaScript asosida saytlar yarataman.</p>
     </div>
-  </section>
+    <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="clickEffect(this)">
+      <i class="ri-smartphone-line"></i>
+      <h4>Mobil Bloger</h4>
+      <p>Telefon orqali rasm va videolarni tahrirlayman.</p>
+    </div>
+    <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="clickEffect(this)">
+      <i class="ri-gamepad-fill"></i>
+      <h4>Gamer</h4>
+      <p>Minecraft va Roblox’da xaritalar yaratish bilan shug‘ullanaman.</p>
+    </div>
+  </div>
+</section>
+
 
 <section class="meningwebsaytlrim" id="meningwebsaytlrim">
   <div class="about-content">
@@ -414,7 +462,7 @@ footer .list a {
       <p class="project-description" id="projectDescription">
         Salom hammaga! 👋Men o‘zim mustaqil tarzda 2048 o‘yini asosida websayt yaratdim. Sayt aynan kompyuter foydalanuvchilari uchun qulaylashtirilgan. 💻✨🔍 Asosiy xususiyatlar:⚡️ Tez ishlaydi va yengil interfeys⌨️ Oson boshqaruv (klaviatura bilan)🚫 Minimal reklama — maksimal o‘yin zavqi.
       </p>
-      <a class="visit-button" id="visitLink" href="https://reyzer2112.github.io/ReyZer2112/" target="_blank">Saytga o'tish</a>
+      <a class="visit-button" id="visitLink" href="https://reyzer2112.github.io/2048-Oyini/" target="_blank">Saytga o'tish</a>
     </div>
   </div>
 
@@ -427,17 +475,16 @@ footer .list a {
 
 <script>
   const projects = [
-    {
-      number: "01",
-      title: "2048 O‘yini",
-      description: "Salom hammaga! 👋Men o‘zim mustaqil tarzda 2048 o‘yini asosida websayt yaratdim. Sayt aynan kompyuter foydalanuvchilari uchun qulaylashtirilgan. 💻✨🔍 Asosiy xususiyatlar:⚡️ Tez ishlaydi va yengil interfeys⌨️ Oson boshqaruv (klaviatura bilan)🚫 Minimal reklama — maksimal o‘yin zavqi.",
-    
-      link: "https://reyzer2112.github.io/ReyZer2112/"
-    },
-    {
-      number: "02",
-      title: "Wordle O‘zbekcha",
-      description: `O‘zbek tilida 5 harfli so‘zni topishga asoslangan mini web-o‘yin. Mobil va kompyuterda qulay ishlaydi! 📱💻
+  {
+    number: "01",
+    title: "2048 O‘yini",
+    description: "Salom hammaga! 👋Men o‘zim mustaqil tarzda 2048 o‘yini asosida websayt yaratdim. Sayt aynan kompyuter foydalanuvchilari uchun qulaylashtirilgan. 💻✨🔍 Asosiy xususiyatlar:⚡️ Tez ishlaydi va yengil interfeys⌨️ Oson boshqaruv (klaviatura bilan)🚫 Minimal reklama — maksimal o‘yin zavqi.",
+    link: "https://reyzer2112.github.io/ReyZer2112/"
+  },
+  {
+    number: "02",
+    title: "Wordle O‘zbekcha",
+    description: `O‘zbek tilida 5 harfli so‘zni topishga asoslangan mini web-o‘yin. Mobil va kompyuterda qulay ishlaydi! 📱💻
 
 🔑 Asosiy imkoniyatlar:
 🖐 O‘zbekcha harflar
@@ -446,13 +493,12 @@ footer .list a {
 🌙 Tungi va kunduzgi rejim
 📊 G‘alaba va yutqazish statistikasi
 📖 So‘zlar ro‘yxati tugmasi.`,
-
     link: "https://reyzer2112.github.io/Wordle-O-zbekcha/"
-    },
-    {
-      number: "03",
-      title: "Necha vaqt qoldi?",
-      description: `📆 Sana sanash endi muammo emas!
+  },
+  {
+    number: "03",
+    title: "Necha vaqt qoldi?",
+    description: `📆 Sana sanash endi muammo emas!
 📱 Mobilga mos, sodda, chiroyli va qulay veb-ilova tayyor!
 
 🔔 Tug‘ilgan kunmi?
@@ -468,10 +514,61 @@ footer .list a {
 ✔️ Chiroyli animatsiyalar
 ✔️ Audio ogohlantirish
 ✔️ Telefon va kompyuterda ishlaydi
-✔️ Telegram, Instagram, Discord linklari bilan`,  
+✔️ Telegram, Instagram, Discord linklari bilan`,
     link: "https://reyzer2112.github.io/Necha-kun-qoldi-/"
-    }
-  ];
+  },
+  {
+    number: "04",
+    title: "Yorug‘ Uy Qurish",
+    description: `🚨 Yorug‘ Uy Qurish — Hayot-mamot sarguzashti boshlanmoqda! 🏝✨
+Sening kemang halokatga uchradi va sen noma’lum orolga chiqding…
+Endi yagona maqsading — tungi zulmat kelmasidan oldin uyingni qurib, uni yorug‘ qilish! 💡
+
+⚡️ Missiya:
+Vaqt tugashidan oldin uyingni qur!
+Yorug‘lik yoqib, qutqaruv kemalariga yo‘l ko‘rsat!
+Omon qolish uchun aqlli va tezkor bo‘l!
+
+🌊 Har soniya muhim… seni qutqarish yoki unutish — bu senga bog‘liq!`,
+    link: "https://reyzer2112.github.io/Yorug-uy-qurish"
+  },
+  {
+    number: "05",
+    title: "Kubik Rubik",
+    description: `🧩 Kubik Rubik – Onlayn O‘yna va O‘rgan! 🎯
+
+🎮 Brauzerda o‘ynang – hech narsa yuklab olish shart emas.  
+📚 Bosqichma-bosqich qo‘llanma – yangi boshlovchilar uchun ham oson.  
+⚡️ Tez, bepul va mobil/kompyuterga mos.  
+🎨 Yorqin dizayn va silliq animatsiyalar.  
+🎯 Maqsad – kubikni tez yig‘ish va do‘stlaringiz bilan bellashish.  
+🚀 Hozir o‘yna`,
+  link: "https://reyzer2112.github.io/ReyZer-Kubik-Rubik/"
+},
+  {
+    number: "06",
+    title: "Tayoqli Qahramon",
+    description: `🕹🏃‍♂️ Tayoqli Qahramon – Oddiy, lekin addictiv o‘yin!  
+
+⚡ Missiya: Qahramonni tayoq bilan yo‘naltirib yiqilmasligini ta’minlash.  
+🎯 Har bir bosish – aniqlik va tezlik bo‘yicha imtihon.  
+📱 Mobil va kompyuterga mos, silliq animatsiyalar bilan qiziqarli tajriba.  
+🏆 Rekordlar o‘rnatish va do‘stlar bilan bellashish imkoniyati mavjud.`,
+    link: "https://reyzer2112.github.io/Tayoqli-Qahramon"
+  },
+  {
+    number: "07",
+    title: "Flappy Bird",
+    description: `🕊 Flappy Bird – yangi interaktiv o‘yin!
+⚡ Uchish va rekord yangilash orqali refleks va strategiyani sinab ko‘ring.  
+🌈 Yorqin ranglar va silliq animatsiyalar bilan maksimal o‘yin zavqi.  
+📱 Mobil va desktop qurilmalarda qulay ishlash.  
+🏆 Har bir uchish yangi sarguzasht, qiyinchiliklar esa o‘yinni qiziqarli qiladi.  
+🎮 Do‘stlar bilan bellashish va rekordlarni solishtirish mumkin.`,
+    link: "https://reyzer2112.github.io/FlappyBird/"
+  }
+];
+
 
   let current = 0;
 
@@ -620,16 +717,34 @@ function updateProject(dir) {
     });
 
 // Click effect
-document.addEventListener('click', function(e) {
+ ({
   const circle = document.createElement('div');
   circle.classList.add('click-effect');
-  circle.style.left = ${e.pageX - 10}px;
-  circle.style.top = ${e.pageY - 10}px;
+  circle.style.left = `${e.pageX - 10}px`;
+circle.style.top = `${e.pageY - 10}px`;
   document.body.appendChild(circle);
   setTimeout(() => {
     circle.remove();
   }, 500); // 0.5 sekund
 });
+
+
+function hoverEffect(element) {
+  element.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+  element.style.transform = "scale(1.05)"; // Hoverda biroz kattalashadi
+  element.style.boxShadow = "0 4px 12px rgba(255, 0, 0, 0.3)"; // Qizil soya qo‘shiladi
+}
+
+function removeHoverEffect(element) {
+  element.style.transform = "scale(1)";
+  element.style.boxShadow = "none"; // Hover tugaganda effektni olib tashlash
+}
+
+function clickEffect(element) {
+  element.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+  element.style.transform = "scale(1.1)"; // Bosilganda biroz kattalashadi
+  element.style.boxShadow = "0 6px 16px rgba(255, 0, 0, 0.4)"; // Qattiqroq soya
+}
 
 
   let current = 0;
@@ -659,7 +774,7 @@ document.addEventListener('click', function(e) {
       document.getElementById("projectNumber").textContent = p.number;
       document.getElementById("projectTitle").textContent = p.title;
       document.getElementById("projectDescription").textContent = p.description;
-      document.getElementById("projectImage").style.backgroundImage = url('${p.image}');
+      document.getElementById("projectImage").style.backgroundImage = `url('${p.image}')`;
       document.getElementById("visitLink").href = p.link;
 
       text.className = "project-text slide-center";
