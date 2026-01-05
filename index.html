@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -297,15 +298,43 @@ footer .list a {
 
 
     @media (max-width: 768px) {
-      #menu-icon { display: block; }
-      .navbar {
-        display: none; flex-direction: column;
-        background: #111; position: absolute;
-        top: 60px; right: 0; width: 200px;
-        text-align: right; padding: 1rem;
-      }
-      .navbar.active { display: flex; }
-    }
+  #menu-icon { 
+    display: block; 
+    z-index: 1001;
+  }
+
+  .navbar {
+    display: flex; /* Har doim flex, lekin yashirin */
+    flex-direction: column;
+    /* Shaffof orqa fon (Blur effekti bilan) */
+    background: rgba(17, 17, 17, 0.8); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+    position: absolute;
+    top: -1000%; /* Dastlab tepada yashirin */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid red;
+    transition: all 0.5s ease-in-out; /* Animatsiya tezligi */
+    z-index: 1000;
+    opacity: 0;
+  }
+
+  .navbar.active { 
+    top: 100%; /* Headerning tagiga tushadi */
+    opacity: 1;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    transition: 0.3s;
+  }
+}
     .rey {
   color: red;
   animation: swapRey 2s infinite;
@@ -633,6 +662,33 @@ function updateProject(dir) {
 </script>
 
 <script>
+  
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    // Ikonkani almashtirish
+    menuIcon.classList.toggle('ri-close-line');
+    menuIcon.classList.toggle('ri-menu-line');
+    // Menyuni chiqarish/yashirish
+    navbar.classList.toggle('active');
+};
+
+// Sahifa yurganda yoki link bosilganda menyu yopilishi uchun
+window.onscroll = () => {
+    menuIcon.classList.remove('ri-close-line');
+    menuIcon.classList.add('ri-menu-line');
+    navbar.classList.remove('active');
+};
+
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.onclick = () => {
+        navbar.classList.remove('active');
+        menuIcon.classList.add('ri-menu-line');
+        menuIcon.classList.remove('ri-close-line');
+    };
+});
+
   const roles = [
     "Frontend Dasturchiman",
     "Mobil Blogerman",
@@ -830,4 +886,3 @@ function clickEffect(element) {
   </script>
 </body>
 </html>
-
